@@ -1,5 +1,6 @@
 library(XLConnect)
 library(stringi)
+library(diffr)
 
 read_formula = function(file, sheet, cells = NULL, remove_space = FALSE, upper_case = FALSE) {
     wb = loadWorkbook(file)
