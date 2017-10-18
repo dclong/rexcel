@@ -49,8 +49,8 @@ write_formula = function(formula) {
 }
 
 visualize_formula = function(formula) {
-    f1 = write_formula(formula[, 1])
-    f2 = write_formula(formula[, 2])
+    f1 = write_formula(formula[, c("row", "col", "formula_1")])
+    f2 = write_formula(formula[, c("row", "col", "formula_2")])
     diffr(f1, f2)
 }
 
