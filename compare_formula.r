@@ -20,7 +20,7 @@ read_formula = function(file, sheet, cells = NULL, remove_space = FALSE, upper_c
         col = cells[i, 2]
         r = try(getCellFormula(wb, sheet = sheet, row = row, col = col), silent = TRUE)
         if (class(r) != "try-error") {
-            formula = rbind(formula, data.frame(row = i, col = j, formula = r))
+            formula = rbind(formula, data.frame(row = row, col = col, formula = r))
         }
     }
     if (remove_space) {
