@@ -36,8 +36,8 @@ compare_formula = function(file1, sheet1, file2, sheet2, cells = NULL, upper_cas
     formula1 = read_formula(file1, sheet1, cells = cells, remove_space = remove_space, upper_case = upper_case)
     formula2 = read_formula(file2, sheet2, cells = cells, remove_space = remove_space, upper_case = upper_case)
     formula = merge(formula1, formula2, by = c("row", "col"), suffix = c("_1", "_2"), all = TRUE)
-    formula$formula_1[is.na(formula$formula_1)] = ""
-    formula$formula_2[is.na(formula$formula_2)] = ""
+    formula$formula_1 = ifelse(is.na(formula$formula_1), '', formula$formula_1)
+    formula$formula_2 = ifelse(is.na(formula$formula_2), '', formula$formula_2)
     formula[formula$formula_1 != formula$formula_2, ]
 }
 
