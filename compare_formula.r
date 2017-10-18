@@ -43,6 +43,7 @@ compare_formula = function(file1, sheet1, file2, sheet2, cells = NULL, upper_cas
 
 write_formula = function(formula) {
     file = tempfile()
+    formula = stri_paste('[', fromula[, 1], ', ', formula[, 2], ']: ', formula[, 3]) 
     writeLines(formula, con = file)
     file
 }
